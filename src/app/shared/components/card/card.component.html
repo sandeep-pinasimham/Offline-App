@@ -1,0 +1,32 @@
+<!-- <p>card works!</p> -->
+<!-- {{ parentData | json }}? -->
+<!-- <button class="btn btn-primary">Submit</button> -->
+<div *ngIf="parentData" class="card p-2">
+  <h2 class="header">SeriesName: {{ parentData.seriesName }}</h2>
+  <p class="para">Series No: {{ parentData.episodeNumber }}</p>
+  <p class="para">
+    Status:
+    <span
+      [ngClass]="{
+        green: parentData.status === 'In_Progress',
+        'button-31': parentData.status === 'Completed',
+        red: parentData.status === 'TODO'
+      }"
+      >{{ parentData.status | uppercase }}</span
+    >
+  </p>
+  <div class="btn-container">
+    <button class="vm-btn" (click)="viewMore(parentData)" mat-raised-button>
+      View More
+    </button>
+    <button
+      *ngIf="activeRole === 'auditor'"
+      (click)="AddMoreDetails(parentData)"
+      mat-raised-button
+    >
+      Update Details
+    </button>
+  </div>
+</div>
+
+<!-- [disabled]="parentData.status === 'Completed'" -->

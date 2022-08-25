@@ -1,0 +1,22 @@
+.create-cancel {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: flex-end;
+  //   transform: scale(1);
+  cursor: pointer;
+}
+.icon {
+  transform: scale(1.2);
+}
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  //   height: 100%;
+}
+
+.snackbar {
+  background-color: blue;
+}

@@ -1,0 +1,75 @@
+// @import "~bootstrap/dist/css/bootstrap.css";
+.card {
+  display: felx;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 10px;
+  border-radius: 3px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  // overflow: hidden;
+  // border: red 1px solid;
+}
+.header {
+  font-family: "montserrat";
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.para {
+  font-family: "montserrat";
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.btn-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-end;
+  // text-align: center;
+  // border: solid red 1px;
+  width: 100%;
+  padding: 20px;
+}
+
+.vm-btn {
+  margin-right: 7px;
+}
+
+.green {
+  // background-color: green;
+  width: 120px;
+  height: 60px;
+  border-radius: 5px;
+  background-color: #b0bec5;
+  color: #ffffff;
+  padding: 10px;
+}
+
+.red {
+  // background-color: green;
+  width: 120px;
+  height: 60px;
+  border-radius: 5px;
+  background-color: #6e7f80;
+  color: #ffffff;
+  padding: 10px;
+}
+
+.green:hover,
+.green:focus {
+  opacity: 0.75;
+}
+
+.button-31 {
+  background-color: rgb(66, 186, 150);
+  padding: 10px;
+  border-radius: 5px;
+  color: white;
+}
+
+.button-31:hover,
+.button-31:focus {
+  opacity: 0.75;
+}

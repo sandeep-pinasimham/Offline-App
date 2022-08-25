@@ -1,0 +1,48 @@
+<div class="create-cancel">
+  <div class="cancel" (click)="closeDialog()">
+    <mat-icon class="icon"> cancel_presentation</mat-icon>
+  </div>
+</div>
+<form [formGroup]="requestData" (ngSubmit)="onSubmit()">
+  <p>
+    <mat-form-field appearance="outline">
+      <mat-label>Series Name</mat-label>
+      <input matInput placeholder="Series Name" formControlName="seriesName" />
+      <mat-icon matSuffix>movie</mat-icon>
+      <!-- <mat-hint>Hint</mat-hint> -->
+    </mat-form-field>
+  </p>
+
+  <p>
+    <mat-form-field appearance="outline">
+      <mat-label>Episode Number</mat-label>
+      <input
+        matInput
+        placeholder="Episode Number"
+        formControlName="episodeNumber"
+      />
+      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+      <!-- <mat-hint>Hint</mat-hint> -->
+    </mat-form-field>
+  </p>
+
+  <mat-form-field appearance="outline">
+    <mat-label> Auditor</mat-label>
+    <mat-select formControlName="auditor" name="food">
+      <mat-option *ngFor="let auditor of auditorsList" [value]="auditor">
+        {{ auditor.auditorName }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <div class="text-start">
+    <button
+      (click)="openSnackBar()"
+      type="submit"
+      mat-stroked-button
+      [disabled]="!requestData.valid"
+    >
+      Submit
+    </button>
+  </div>
+</form>

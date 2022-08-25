@@ -1,0 +1,32 @@
+@import "../home/home.component.scss";
+// @import "~bootstrap/dist/css/bootstrap.css"; // ._ngcontent-mpy-c16 {
+//   color: red;
+// }
+
+.page-data {
+  width: 100%;
+
+  flex-shrink: 1;
+}
+app-request-list {
+  //   border: solid blue 10px;
+  //   width: 100%;
+}
+.page-box {
+  // color :red;
+  // border: solid blue 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-custom {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-family: "Open Sans";
+  background-color: #24a0ed;
+  color: white;
+}

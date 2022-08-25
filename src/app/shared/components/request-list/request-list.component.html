@@ -1,0 +1,26 @@
+<div class="list-container">
+  <!-- <p>request-list works!</p> -->
+  <ul class="ul-element">
+    <li
+      class="li-element"
+      *ngFor="
+        let request of requests
+          | paginate: { itemsPerPage: pageSize, currentPage: pageNumber }
+      "
+    >
+      <app-card [parentData]="request" ></app-card>
+    </li>
+  </ul>
+</div>
+<div class="page-container">
+  <pagination-controls
+    class="page-control"
+    [ngStyle]="{ 'text-align': 'center' }"
+    previousLabel="Prev"
+    nextLabel="Next"
+    (pageChange)="pageNumber = $event"
+  ></pagination-controls>
+
+  {{ prevButton }}
+</div>
+<!-- (newItemEvent)="onGettingData($event)" -->

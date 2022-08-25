@@ -1,0 +1,31 @@
+// @import "~bootstrap/dist/css/bootstrap.css";
+
+.li-element {
+  list-style-type: none;
+  margin: 10px;
+
+  width: 20rem;
+}
+
+.ul-element {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  height: 100%;
+  width: 100%;
+  //   border: solid red 1px;
+}
+.list-container {
+  width: auto;
+  height: auto;
+}
+
+.page-control {
+  text-align: centre;
+  font-size: 20px;
+}
+.page-container {
+  height: 100%;
+}

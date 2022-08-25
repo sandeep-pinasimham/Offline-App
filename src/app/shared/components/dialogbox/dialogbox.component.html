@@ -1,0 +1,77 @@
+<div
+  class="first-container"
+  *ngIf="data.status === 'Completed'; else progress"
+  #completedView
+>
+  <div class="cancel-div">
+    <h1 class="heading">#RequestId : {{ data.requestId }}</h1>
+    <div class="cancel" (click)="onNoClick()">
+      <mat-icon class="icon"> cancel_presentation</mat-icon>
+    </div>
+  </div>
+
+  <h1 mat-dialog-title class="font">Series Name : {{ data.seriesName }}</h1>
+  <div mat-dialog-content class="font">
+    <p>Director: {{ data.directorName }}</p>
+    <p>Producer: {{ data.producerName }}</p>
+
+    <div class="inter-card">
+      <p>Actors :</p>
+      <ul class="ul-element">
+        <li class="li-element" *ngFor="let actor of data.actors">
+          <p class="small-card">{{ actor.actorName }}</p>
+        </li>
+      </ul>
+    </div>
+
+    <p *ngIf="data.auditor">Auditor: {{ data.auditor.auditorName }}</p>
+
+    <p>Episode Number : {{ data.episodeNumber }}</p>
+
+    <p>{{ data.episodeDescription }}</p>
+    <p>Genre: {{ data.genre }}</p>
+    <p>Language: {{ data.language }}</p>
+
+    <p>IMDB Ratings: {{ data.rating }}</p>
+    <p>Series Release Year : {{ data.seriesReleaseYear }}</p>
+  </div>
+
+  <div class="btn-cont1">
+    <button class="btn-2" mat-stroked-button (click)="previous()">
+      <mat-icon>navigate_before</mat-icon>
+    </button>
+
+    <button class="btn-2" mat-stroked-button (click)="goToNext()">
+      <mat-icon>navigate_next</mat-icon>
+    </button>
+  </div>
+</div>
+
+<ng-template #progress>
+  <div class="contai">
+    <div class="cancel-div">
+      <h1 class="heading">#RequestId : {{ data.requestId }}</h1>
+      <div class="cancel" (click)="onNoClick()">
+        <mat-icon class="icon"> cancel_presentation</mat-icon>
+      </div>
+    </div>
+    <p>Request Created Time : {{ data.createdAt }}</p>
+
+    <h1 mat-dialog-title class="font">Series Name : {{ data.seriesName }}</h1>
+    <p>Episode Number : {{ data.episodeNumber }}</p>
+
+    <p *ngIf="data.auditor">Auditor: {{ data.auditor.auditorName }}</p>
+    <p *ngIf="data.status === 'In_Progress'">
+      {{ data.auditor.auditorName | uppercase }} is working on it..
+    </p>
+    <div class="btn-cont">
+      <button class="btn-2" mat-stroked-button (click)="previous()">
+        <mat-icon>navigate_before</mat-icon>
+      </button>
+
+      <button class="btn-2" mat-stroked-button (click)="goToNext()">
+        <mat-icon>navigate_next</mat-icon>
+      </button>
+    </div>
+  </div>
+</ng-template>

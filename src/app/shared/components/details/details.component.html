@@ -1,0 +1,131 @@
+<div class="cancel-div">
+  <h1 class="heading">#RequestId : {{ data.requestId }}</h1>
+  <div class="cancel" (click)="closeDialog()">
+    <mat-icon class="icon"> cancel_presentation</mat-icon>
+  </div>
+</div>
+
+<form [formGroup]="auditorRequest" (ngSubmit)="onSubmit($event)">
+  <p class="para">
+    <mat-form-field appearance="outline">
+      <mat-label>Series Name</mat-label>
+      <input matInput value="{{ data.seriesName }}" disabled />
+    </mat-form-field>
+  </p>
+  <p class="para">
+    <mat-form-field appearance="outline">
+      <mat-label>Episode Number</mat-label>
+      <input matInput value="{{ data.episodeNumber }}" disabled />
+    </mat-form-field>
+  </p>
+
+  <p class="para">
+    <mat-form-field appearance="outline">
+      <mat-label>Director Name</mat-label>
+      <input
+        matInput
+        placeholder="Director Name"
+        formControlName="directorName"
+      />
+    </mat-form-field>
+  </p>
+
+  <p class="para" *ngIf="actors1">
+    <mat-form-field appearance="outline">
+      <mat-label>Actors</mat-label>
+      <mat-select formControlName="actors" multiple>
+        <mat-option *ngFor="let actor of actors1" [value]="actor.actorId">{{
+          actor.actorName
+        }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </p>
+
+  <p class="para">
+    <mat-form-field class="example-full-width" appearance="outline">
+      <mat-label>Episode Description</mat-label>
+
+      <textarea formControlName="episodeDescription" matInput></textarea>
+    </mat-form-field>
+  </p>
+
+  <p class="para">
+    <mat-form-field appearance="outline">
+      <mat-label>Genre</mat-label>
+      <input matInput placeholder="Genre" formControlName="genre" />
+    </mat-form-field>
+  </p>
+
+  <p class="para">
+    <mat-form-field appearance="outline">
+      <mat-label>Producer Name</mat-label>
+      <input
+        matInput
+        placeholder="ProducerName"
+        formControlName="producerName"
+      />
+    </mat-form-field>
+  </p>
+
+  <p class="para">
+    <mat-form-field appearance="outline">
+      <mat-label>language</mat-label>
+      <input matInput placeholder="language" formControlName="language" />
+    </mat-form-field>
+  </p>
+
+  <p class="para">
+    <mat-form-field appearance="outline">
+      <mat-label>rating</mat-label>
+      <input matInput placeholder="rating" formControlName="rating" />
+    </mat-form-field>
+  </p>
+
+  <p class="para">
+    <mat-form-field appearance="outline">
+      <mat-label>Series Release Year</mat-label>
+      <input
+        matInput
+        placeholder="Series Release Year"
+        formControlName="seriesReleaseYear"
+      />
+    </mat-form-field>
+  </p>
+
+  <div class="button">
+    <button
+      class="para"
+      name="submitbtn"
+      color="primary"
+      type="submit"
+      (click)="openSnackBar()"
+      mat-raised-button
+    >
+      Submit
+    </button>
+
+    <button
+      class="para"
+      name="savebtn"
+      color="accent"
+      type="submit"
+      mat-raised-button
+    >
+      Save
+    </button>
+
+    <button class="para" mat-raised-button (click)="closeDialog()">
+      Cancel
+    </button>
+  </div>
+
+  <div class="test-cont">
+    <button class="btn-2" mat-stroked-button (click)="previous()">
+      <mat-icon>navigate_before</mat-icon>
+    </button>
+
+    <button class="btn-2" mat-stroked-button (click)="goToNext()">
+      <mat-icon>navigate_next</mat-icon>
+    </button>
+  </div>
+</form>

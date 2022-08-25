@@ -1,0 +1,16 @@
+<div class="container-fluid page">
+  <div class="d-flex page-box p-3 mt-2">
+    <p>{{ activeRole | uppercase }} DASHBOARD</p>
+
+    <button
+      *ngIf="activeRole === 'manager'"
+      class="btn btn-custom"
+      (click)="createRequesOpenModel()"
+    >
+      <mat-icon>playlist_add</mat-icon>Create New
+    </button>
+  </div>
+  <div class="page-content shadow p-3 position-relative">
+    <app-request-list></app-request-list>
+  </div>
+</div>
